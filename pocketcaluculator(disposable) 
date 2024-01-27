@@ -1,0 +1,84 @@
+// Pocket calculator 
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+ /* First I need to declare functions for each of the operations I wish the user to perform 
+ /* I'll call the functions add, subtract, multiply, and divide 
+float add(float input1, float input2)
+{
+float sum = input1 + input2;
+std::cout << "The sum is: " << sum;
+  return sum ; 
+}
+
+float subtract(float input1, float input2){
+float difference = input1 - input2;
+std::cout << "The difference is: " << difference;
+return difference;
+}
+
+float multiply(float input1, float input2){
+float product = input1 * input2;
+std::cout << "The product is: " << product;
+return product;
+} 
+float divide(float input1, float input2){
+float quotient = input1 / input2;
+std::cout << "The quotient is: " << quotient;
+return quotient;
+} 
+/* I want to store these characters so they can be recognized as the functions. 
+/* I want to use them as operators that will branch. 
+
+char addition = '+';
+char subtraction = '-';
+char multiplication = '*';
+char division = '/';
+
+/* I want to declare a function that asks the user for two numbers and an operator in  between
+/* I want the calculator to be user friendly 
+/* My get number and operator in function is called asking 
+/* It will ask, recieve, then return the result of the operator functions 
+
+float asking(float, float)
+  {
+  float input1, input2;
+    float gotten1, gotten2;
+  char opera;
+ std:: cout << "Enter a number: ";
+  std::cin >> gotten1; 
+  input1 = gotten1; 
+  std::cout << "Enter an operator: ";
+  std::cin >> opera;
+  std:: cout << "Enter a number: ";
+  std::cin >> gotten2; 
+  input2 = gotten2; 
+  
+  if (opera == '+') 
+  { return add(input1, input2); }
+    
+  else if (opera == '-')
+  { return subtract(input1, input2); }
+    
+  else if (opera == '*')  
+  { return multiply(input1, input2); }
+    
+  else if (opera == '/')
+  { return divide(input1, input2); }
+    
+  else
+    { std::cout << "Invalid operator"; }
+  }
+int main() {
+  /* When the program starts I want to greet the user. 
+  
+  /*   std :: cout << "This is the two number calculator! " << "You can do four operations of two numbers here." <<  " \n"; 
+    asking(float, float)
+  return 0; 
+    
+}
+
+
+
+ 
