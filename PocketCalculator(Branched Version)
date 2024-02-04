@@ -1,0 +1,106 @@
+//Pocket Calculator - Branched Version 
+#include <iostream>
+#include <iomanip> 
+#include <cmath>
+using namespace std;
+
+
+float add(float theNumber, float theSecondNumber)
+{
+float sum = theNumber + theSecondNumber;
+  float theResult;
+std::cout << "The sum is: " << sum;
+theResult = sum  ;
+  return sum ; 
+}
+float subtract(float theNumber, float theSecondNumber)
+{
+float difference = theNumber - theSecondNumber;
+   float theResult;
+std::cout << "The difference is: " << difference;
+  theResult = difference;; 
+return difference;
+}
+float multiply(float theNumber, float theSecondNumber)
+{
+float product = theNumber * theSecondNumber;
+   float theResult;
+std::cout << "The product is: " << product;
+theResult = product; 
+return product;
+} 
+float divide(float theNumber, float theSecondNumber)
+{
+float quotient = theNumber / theSecondNumber;
+   float theResult;
+std::cout << "The quotient is: " << quotient;
+ theResult = quotient;
+return quotient;
+} 
+
+ 
+void askNumber(float theNumber){
+  std::cout << "Enter a number: ";
+  std::cin >> theNumber;
+
+}
+void askOperation(char theOperation){
+  std::cout << "Enter an operation: ";
+  std::cin >> theOperation;
+
+}
+
+void performOperation(float theNumber, char theOperation, float theSecondNumber, float theResult){
+  
+  if (theOperation == '+')
+    theResult = add(theNumber, theSecondNumber);
+  else if (theOperation == '-')
+    theResult = subtract(theNumber, theSecondNumber);
+  else if (theOperation == '*')
+    theResult = multiply(theNumber, theSecondNumber);
+  else if (theOperation == '/')
+    theResult = divide(theNumber, theSecondNumber);
+  else if (theOperation == 'q')
+    exit(-1) ;
+  else
+    std::cout << "Invalid operation";
+  exit(-1);
+}
+
+
+void outputResult(float theNumber, char theOperation, float theSecondNumber, float theResult){
+  std::cout << "The result is: " << theResult;
+}
+
+
+int main() {
+  // Declaration of variables 
+  float theResult;
+  float theNumber;
+  float theSecondNumber; 
+  char theOperation;
+
+  //Ask for the fisrt operand 
+  askNumber(theNumber);
+  
+  // Ask for an operation 
+  askOperation(theOperation);
+
+  while (theOperation != 'q'){
+    
+  // Ask for the second operand 
+  askNumber(theSecondNumber);
+
+  // Perform a single operation and store the varibale in theNumber
+  performOperation(theNumber, theOperation, theSecondNumber, theResult);
+
+  //Output the result of the operation
+  outputResult(theNumber, theOperation, theSecondNumber, theResult);
+
+  theNumber = theResult; 
+  // Ask for an operation 
+  askOperation(theOperation); 
+  }
+  return 0;
+}
+
